@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  url-shortener:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      # Base domain for shortened URLs (change to your public domain in production)
+      - SHORT_DOMAIN=http://localhost:5000/
+      
+      # Rate Limiting Configuration
+      # Set to "true" to enable rate limiting, "false" to disable
+      - RATE_LIMIT_ENABLED=true 
+      - RATE_LIMIT_MAX_REQUESTS=100
+      - RATE_LIMIT_WINDOW_SECONDS=3600 # 1 hour
+      
+      # Admin API Key (CHANGE THIS FOR PRODUCTION!)
+      - ADMIN_API_KEY=supersecretadminkey 
+    restart: unless-stopped # Always restart unless stopped manually
+
