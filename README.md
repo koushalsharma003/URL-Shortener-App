@@ -2,15 +2,17 @@
 
 A small backend application for creating a short url for a given url.
 
-###This repo consists of 4 files.
+### This repo consists of 4 files.
 
-1. Dockerfile - This file is used to create a docker image
+1. Dockerfile
 
 2. requirements.txt - It contains all the module that are needed to run the code
 
 3. url_shortener.py - It contains the logic to create a short url.
 
-##Steps to run -
+4. docker-compose.yml - This is used to create a docker image
+
+## Steps to run -
 
 1. Clone the repository
 
@@ -22,7 +24,7 @@ A small backend application for creating a short url for a given url.
 4. Run python url_shortener.py command
    This will run the flask server on the port 127.0.0.1:5000
 
-##Test the application:
+## Test the application:
 
 1. Make a curl request -
    curl -X POST -H "Content-Type: application/json" -d '{
